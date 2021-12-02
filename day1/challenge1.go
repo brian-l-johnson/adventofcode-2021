@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	//clipboard.WriteAll("日本語")
 	scanner := bufio.NewScanner(os.Stdin)
 	i := 0
 	last := 0
