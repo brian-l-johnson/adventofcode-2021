@@ -66,7 +66,7 @@ type Point struct {
 	y int
 }
 
-func new(x int, y int) Point {
+func newPoint(x int, y int) Point {
 	var p Point
 	p.x = x
 	p.y = y
@@ -91,9 +91,7 @@ func parsePoint(s string) Point {
 		fmt.Printf("here: --%v--\n", ps[1])
 		panic("invalid point spec")
 	}
-	var p Point
-	p.x = x
-	p.y = y
+	p := newPoint(x, y)
 	return p
 }
 
@@ -123,9 +121,7 @@ func connectPoints(p1 Point, p2 Point) []Point {
 		if tx == p2.x && ty == p2.y {
 			connecting = false
 		}
-		var p Point
-		p.x = tx
-		p.y = ty
+		p := newPoint(tx, ty)
 		points = append(points, p)
 	}
 
